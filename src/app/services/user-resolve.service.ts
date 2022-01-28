@@ -10,12 +10,13 @@ import {IUser} from "../interfaces";
 })
 export class UserResolveService implements Resolve<IUser> {
 
+
   constructor(private userService: UserService) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IUser> | Promise<IUser> | IUser {
-
-    return this.userService.getUser(route.params["id"]);
+    console.log(+route.params['id']);
+    return this.userService.getUser(+route.params['id']);
   }
 
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ari-bnb-ng": {
+    "june2021angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ari-bnb-ng",
+            "outputPath": "dist/june2021angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ari-bnb-ng:build:production"
+              "browserTarget": "june2021angular:build:production"
             },
             "development": {
-              "browserTarget": "ari-bnb-ng:build:development"
+              "browserTarget": "june2021angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ari-bnb-ng:build"
+            "browserTarget": "june2021angular:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "ari-bnb-ng"
+  "defaultProject": "june2021angular"
 }

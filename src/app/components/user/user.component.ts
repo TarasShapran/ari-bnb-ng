@@ -9,8 +9,11 @@ import {IUser} from "../../interfaces/user.interface";
 export class UserComponent implements OnInit {
 
   @Input()
-  user:IUser;
-  constructor() { }
+  user: IUser;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

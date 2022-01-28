@@ -1,6 +1,6 @@
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
-let baseUrl = environment.API;
+const baseUrl = environment.API;
 
 export const urls = {
   users:`${baseUrl}/users`,

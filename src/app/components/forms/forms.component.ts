@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
-import {UserService} from "../../services";
-import {IUser} from "../../interfaces";
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../../services';
+import {IUser} from '../../interfaces';
 
 @Component({
   selector: 'app-forms',
@@ -10,13 +10,13 @@ import {IUser} from "../../interfaces";
 })
 export class FormsComponent implements OnInit {
   user = {
-    username: 'Taras',
-    password: 1111
+    username: 'Max',
+    password: 111
   }
   myForm: FormGroup;
   myForm2: FormGroup;
   users: IUser[];
-  userDetail:IUser;
+  userDetail: IUser;
 
   constructor(private userService: UserService) {
   }
@@ -27,9 +27,8 @@ export class FormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(5), this.customValidator]),
-      age: new FormControl(18),
-
+      name: new FormControl('', [Validators.minLength(7), this.customValidator]),
+      age: new FormControl(10)
     })
     this.myForm2 = new FormGroup({
       userId: new FormControl(1)
@@ -38,17 +37,19 @@ export class FormsComponent implements OnInit {
   }
 
   save(tref: HTMLFormElement) {
-    console.log(tref);
+    console.log(tref['username'].value);
     console.log(this.user);
   }
 
   save2() {
     console.log(this.myForm);
+    console.log(this.myForm.controls['age'].value);
+    console.log(this.myForm.getRawValue());
   }
 
+
   showDetails() {
-    console.log(this.myForm2.controls);
-    let id = this.myForm2.controls['userId'].value;
-    this.userDetail=this.users[id-1]
+    const id = this.myForm2.controls['userId'].value;
+    this.userDetail = this.users[id - 1]
   }
 }
